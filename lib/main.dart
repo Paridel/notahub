@@ -88,11 +88,10 @@ class PageAccueil extends StatelessWidget {
     );
   }
 
-  // CORRECTION: Fonction corrigée
   double calculateMoyenne(List<Etudiant> etudiants) {
-    double total = 0.0; // Initialisé comme double
+    double total = 0.0;
     for (var etudiant in etudiants) {
-      total += etudiant.moyenne; // Pas de redéclaration, pas de cast
+      total += etudiant.moyenne;
     }
     return total / etudiants.length;
   }
