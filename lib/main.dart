@@ -16,6 +16,7 @@ class MonApplication extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: PageAccueil(),
+      debugShowCheckedModeBanner: false,
       routes: {
         '/details': (context) => DetailPage(),
       },
@@ -36,7 +37,7 @@ class PageAccueil extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Liste des étudiants'),
+        title: Text('NotaHub'),
       ),
       body: Padding(
         padding: EdgeInsets.all(16.0),
@@ -61,8 +62,12 @@ class PageAccueil extends StatelessWidget {
                       borderRadius: BorderRadius.circular(10.0),
                     ),
                     child: ListTile(
-                      title: Text('Nom: ${etudiant.nom}'),
-                      subtitle: Text('Moyenne : ${etudiant.moyenne}'),
+                      title: Text('Nom: ${etudiant.nom}',
+                          style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.blue)
+                      ),
+                      subtitle: Text('Moyenne : ${etudiant.moyenne}',
+                          style: TextStyle(fontSize: 16, color: Colors.black)
+                      ),
                       onTap: () {
                         Navigator.pushNamed(
                           context,
